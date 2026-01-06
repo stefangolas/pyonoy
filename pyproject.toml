@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyonoy"
+version = "0.1.0"
+description = "Python utilities for controlling the Byonoy Absorbance 96 plate reader via SiLA2"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Your Name", email = "you@example.com" },
+]
+keywords = ["byonoy", "absorbance", "sila2", "plate-reader", "laboratory", "automation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "grpcio>=1.50.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.20",
+    "grpcio-tools>=1.50.0",
+]
+
+[project.scripts]
+pyonoy-launch = "pyonoy.cli:launch_main"
+pyonoy-client = "pyonoy.cli:client_main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/pyonoy"
+Documentation = "https://github.com/yourusername/pyonoy#readme"
+Repository = "https://github.com/yourusername/pyonoy"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pyonoy"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
