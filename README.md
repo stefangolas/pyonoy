@@ -47,7 +47,7 @@ By default, the SiLA2 server binds to `127.0.0.1` (localhost only). To allow net
 
 ```bash
 git clone https://github.com/stefangolas/pyonoy.git
-cd byonoy-absorbance96
+cd pyonoy
 pip install -e .
 ```
 
@@ -82,7 +82,7 @@ byonoy-client quit --insecure
 ### Python API
 
 ```python
-from byonoy_absorbance96 import (
+from pyonoy import (
     PyonoyClient,
     ConnectionConfig,
     ExportFormat,
@@ -112,7 +112,7 @@ client.disconnect()
 ### High-Level API
 
 ```python
-from byonoy_absorbance96 import run_assay, ExportFormat
+from pyonoy import run_assay, ExportFormat
 
 results = run_assay(
     protocol_path="C:/Protocols/assay.byop",
