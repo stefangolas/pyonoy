@@ -26,7 +26,7 @@ classifiers = [
     "Topic :: Scientific/Engineering",
 ]
 dependencies = [
-    "grpcio>=1.50.0",
+    "sila2>=0.14.0",
 ]
 
 [project.optional-dependencies]

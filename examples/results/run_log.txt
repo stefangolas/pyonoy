@@ -1,0 +1,41 @@
+C:\Users\ChoryLab\AppData\Local\Programs\Python\Python311\Lib\site-packages\sila2\client\client_observable_command_instance.py:83: UserWarning: Server shortened previously unconstrained lifetime of observable command instance df43c7fd-b0de-4681-9d7c-c9e7bf8f81bc. Ignoring.
+  warnings.warn(
+Launching Absorbance 96 App in headless mode...
+Started with PID: 24892
+Waiting for server startup...
+Connected to SiLA2 server
+Loading protocol: file:///C:/Users/ChoryLab/pyonoy/examples/abs_600.byoa
+Preparing reader...
+Error during workflow: DeviceError: Unavailable Wavelength Selected: The connected device does not provide the selected wavelength. Please connect a different device or go back to <b>Setup</b> and select an available wavelength in the <b>Workflow Parameters</b> section.
+Traceback (most recent call last):
+  File "C:\Users\ChoryLab\AppData\Local\Programs\Python\Python311\Lib\site-packages\sila2\client\utils.py", line 57, in call_rpc_function
+    response_msg, _ = rpc_func.with_call(parameter_message, metadata=grpc_metadata)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ChoryLab\AppData\Local\Programs\Python\Python311\Lib\site-packages\grpc\_channel.py", line 1180, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ChoryLab\AppData\Local\Programs\Python\Python311\Lib\site-packages\grpc\_channel.py", line 996, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.ABORTED
+	details = "EsACClFjb20uYnlvbm95L2FwcGxpY2F0aW9uL0FwcGxpY2F0aW9uQ29udHJvbGxlci92MS9EZWZpbmVkRXhlY3V0aW9uRXJyb3IvRGV2aWNlRXJyb3IS6gFVbmF2YWlsYWJsZSBXYXZlbGVuZ3RoIFNlbGVjdGVkOiBUaGUgY29ubmVjdGVkIGRldmljZSBkb2VzIG5vdCBwcm92aWRlIHRoZSBzZWxlY3RlZCB3YXZlbGVuZ3RoLiBQbGVhc2UgY29ubmVjdCBhIGRpZmZlcmVudCBkZXZpY2Ugb3IgZ28gYmFjayB0byA8Yj5TZXR1cDwvYj4gYW5kIHNlbGVjdCBhbiBhdmFpbGFibGUgd2F2ZWxlbmd0aCBpbiB0aGUgPGI+V29ya2Zsb3cgUGFyYW1ldGVyczwvYj4gc2VjdGlvbi4="
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:10, grpc_message:"EsACClFjb20uYnlvbm95L2FwcGxpY2F0aW9uL0FwcGxpY2F0aW9uQ29udHJvbGxlci92MS9EZWZpbmVkRXhlY3V0aW9uRXJyb3IvRGV2aWNlRXJyb3IS6gFVbmF2YWlsYWJsZSBXYXZlbGVuZ3RoIFNlbGVjdGVkOiBUaGUgY29ubmVjdGVkIGRldmljZSBkb2VzIG5vdCBwcm92aWRlIHRoZSBzZWxlY3RlZCB3YXZlbGVuZ3RoLiBQbGVhc2UgY29ubmVjdCBhIGRpZmZlcmVudCBkZXZpY2Ugb3IgZ28gYmFjayB0byA8Yj5TZXR1cDwvYj4gYW5kIHNlbGVjdCBhbiBhdmFpbGFibGUgd2F2ZWxlbmd0aCBpbiB0aGUgPGI+V29ya2Zsb3cgUGFyYW1ldGVyczwvYj4gc2VjdGlvbi4="}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ChoryLab\pyonoy\examples\assay_script.py", line 107, in <module>
+    run_automated_workflow()
+  File "C:\Users\ChoryLab\pyonoy\examples\assay_script.py", line 65, in run_automated_workflow
+    client.prepare_for_readout()
+  File "C:\Users\ChoryLab\pyonoy\pyonoy\client.py", line 178, in prepare_for_readout
+    instance = client.ApplicationController.PrepareForReadout(metadata=metadata)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ChoryLab\AppData\Local\Programs\Python\Python311\Lib\site-packages\sila2\client\client_observable_command.py", line 51, in __call__
+    response_msg: SilaCommandConfirmation = call_rpc_function(
+                                            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ChoryLab\AppData\Local\Programs\Python\Python311\Lib\site-packages\sila2\client\utils.py", line 62, in call_rpc_function
+    raise rpcerror_to_silaerror(ex, allowed_errors, client)
+sila2.framework.errors.defined_execution_error.DefinedExecutionError: DeviceError: Unavailable Wavelength Selected: The connected device does not provide the selected wavelength. Please connect a different device or go back to <b>Setup</b> and select an available wavelength in the <b>Workflow Parameters</b> section.

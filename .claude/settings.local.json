@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c:*)",
+      "Bash(powershell -Command \"Get-CimInstance Win32_PnPEntity | Where-Object { $_Name -match ''COM3'' } | Select-Object Name, DeviceID, Manufacturer, Description | Format-List\")"
+    ]
+  }
+}
